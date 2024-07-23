@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Doc SignIn</title>
+	    {% load static %}
+    <!-- Prism CSS -->
+    <link href="{% static "tinymce/css/prism.css" %}" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript for Materialize CSS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+<body><center>
+  <nav>
+    <div style="background-color:#FF9305;" class="nav-wrapper">
+      <a href="#" class="brand-logo center">Doctor Sign In</a>
+      <ul id="nav-mobile" class="left hide-on-med-and-down">
+        <li><a href="/home?homepage.html">Home</a></li>
+      </ul>
+    </div>
+  </nav>
+<form  action='#' method="post">
+{% csrf_token %}
+  <div class="row">
+    
+      <div class="row">
+	    <div class="input-field col s3">
+		
+		</div>
+		
+        <div class="input-field col s6">
+          <input  id="doctor name" type="text" name="docname" required>
+          <label for="doctor name">Doctor Name</label>
+        </div>
+	  </div>
+	  <div class="row">
+	    <div class="input-field col s3">
+		
+		</div>
+        <div class="input-field col s6">
+		  <input id="doctor email" type="email" name="docemail" required >
+          <label for="doctor email">Email Id </label>
+        </div>
+	  </div>
+	  <div class="row">
+	    <div class="input-field col s3">
+		
+		</div>
+        <div class="input-field col s6">
+		  <input id="doc password" type="password" name="docpass" required >
+          <label for="doc password">Password </label>
+        </div>	
+      		
+      </div>
+
+    
+  </div>
+<p>
+
+		<button style="background-color:#FF9305;" class="btn waves-effect waves-light" type="Submit" formaction="/signin?a=docsign" >Login
+		</button>
+</p>
+</form>
+</body></center>
+</html>

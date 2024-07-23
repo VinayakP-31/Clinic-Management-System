@@ -1,0 +1,37 @@
+<html>
+<head>
+<!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<title>PATIENT SIGN UP</title>
+</head>
+<body style="background-color:powderblue;">
+<div class="row">
+  <div class="column" style="width:50%;float:left">
+    <img src="/static/images/patregisterimg.jpg" style="width:100%;height:100%">
+  </div>
+  <div class="column" style="width:50%;float:right">
+    <img src="/static/images/patregisterimg3.webp" style="width:100%;height:100%">
+  </div>
+</div>
+
+<left>
+
+<h1 style="color:green;font-size:30px;font-family:Bradley Hand, cursive;">DETAILS FOR REGISTRATION</h1>
+<form action='#' method="post">
+{%csrf_token%}
+<h2 style="color:green;font-size:30px;font-family:Bradley Hand, cursive;"> NAME</h2><input placeholder="Name"  type="text" name="naming">
+<h3 style="color:green;font-size:30px;font-family:Bradley Hand, cursive;"> CONTACT NO</h3><input placeholder="Contact no"  type="text" name="contact">
+<h4 style="color:green;font-size:30px;font-family:Bradley Hand, cursive;"> EMAIL ID</h4><input placeholder="Email-ID"  type="text" name="emailid">
+<h5 style="color:green;font-size:30px;font-family:Bradley Hand, cursive;"> PASSWORD</h5><input placeholder="Password"  type="text" name="passwd">
+<button class="btn waves-effect waves-light" type="submit" name="action" >
+<i class="material-icons right">></i>
+<input type="Submit" formaction="/addfromhome?a=regis"/>
+</form>
+</button>
+</left>
+<img src="/static/images/patregisterimg2.png" width:100% height:100%>
+</body>
+</html>

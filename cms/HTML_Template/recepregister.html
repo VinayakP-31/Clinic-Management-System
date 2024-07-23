@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Receptionist Register</title>
+	    {% load static %}
+    <!-- Prism CSS -->
+    <link href="{% static "tinymce/css/prism.css" %}" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript for Materialize CSS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+
+<body><center>
+  <nav>
+    <div style="background-color:#FF9305;" class="nav-wrapper">
+      <a href="#" class="brand-logo center">Receptionist Register</a>
+      <ul id="nav-mobile" class="left hide-on-med-and-down">
+        <li><a href="/home?homepage.html">Home</a></li>
+      </ul>
+    </div>
+  </nav>
+<form  action='#' method="post">
+{% csrf_token %}
+  <div class="row">
+    
+      <div class="row">
+	    <div class="input-field col s3">
+		
+		</div>
+		
+        <div class="input-field col s6">
+          <input  id="receptionist name" type="text" name="recepname" required>
+          <label for="receptionist name">Receptionist Name</label>
+        </div>
+	  </div>
+	  <div class="row">
+	    <div class="input-field col s3">
+		
+		</div>
+        <div class="input-field col s6">
+		  <input id="receptionist number" type="text" name="recepno" required>
+          <label for="receptionist number">Receptionist Phone No </label>
+        </div>
+	  </div>
+	  <div class="row">
+	    <div class="input-field col s3">
+		
+		</div>
+        <div class="input-field col s6">
+		  <input id="receptionist clinic" type="text" name="recepclinic" required>
+          <label for="receptionist clinic">Clinic Name </label>
+        </div>
+	  </div>
+	  <div class="row">
+	    <div class="input-field col s3">
+		
+		</div>
+        <div class="input-field col s6">
+		  <input id="receptionist email" type="email" name="recepemail" required>
+          <label for="receptionist email">Email Id </label>
+        </div>
+	  </div>
+	  <div class="row">
+	    <div class="input-field col s3">
+		
+		</div>
+        <div class="input-field col s6">
+		  <input id="receptionist password" type="password" name="receppass" required >
+          <label for="receptionist password">Password </label>
+        </div>	
+      		
+      </div>
+
+    
+  </div>
+
+<p>
+		<button style="background-color:#FF9305;" class="btn waves-effect waves-light" type="Submit" formaction="/register?a=recepreg" >Register
+		</button>
+</p>
+</form>
+    {% if messages %}
+        {% for message in messages %}
+            {% if message.tags == 'success'%}
+                <script>M.toast({html: "{{message}}", classes: 'green rounded', displayLength:2000});</script>
+            {% elif message.tags == 'info'%}
+                <script>M.toast({html: "{{message}}", classes: 'blue rounded', displayLength:2000});</script>
+            {% elif message.tags == 'warning'%}
+                <script>M.toast({html: "{{message}}", classes: 'orange rounded', displayLength:10000});</script>
+            {% elif message.tags == 'error'%}
+                <script>M.toast({html: "{{message}}", classes: 'red rounded', displayLength:10000});</script>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+</body></center>
+</html>

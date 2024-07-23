@@ -1,0 +1,32 @@
+<html>
+<head>
+<!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<title>PATIENT SIGN IN</title>
+</head>
+<body style="background-color:powderblue;"><left>
+<div class="row">
+  <div class="column" style="width:50%;float:left">
+    <img src="/static/images/patlogin1.jpg" style="width:100%;height:100%">
+  </div>
+  <div class="column" style="width:50%;float:right">
+    <img src="/static/images/patlogin2.jpg" style="width:100%;height:100%">
+  </div>
+</div>
+
+<h1 style="color:darkgreen;font-style:italic;font-size:30px;font-family:Bradley Hand, cursive;"><strong>WELCOME TO CMS!!PLEASE LOGIN!!</strong></h1>
+<form action='#' method="POST">
+{%csrf_token%}
+<h2 style="color:darkgreen;font-style:italic;font-size:30px;font-family:Bradley Hand, cursive;"> EMAIL ID</h4><input placeholder="Email-ID"  type="text" name="emailid">
+<h3 style="color:darkgreen;font-style:italic;font-size:30px;font-family:Bradley Hand, cursive;"> PASSWORD</h5><input placeholder="Password"  type="text" name="passwd">
+<button class="btn waves-effect waves-light" type="submit" name="action" >
+<i class="material-icons right">></i>
+<input type="Submit" formaction="/login?a=sign"/>
+</form>
+</button>
+</center>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+<title> Doctor page</title>
+    {% load static %}
+    <!-- Prism CSS -->
+    <link href="{% static "tinymce/css/prism.css" %}" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript for Materialize CSS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+<body><center>
+  <nav>
+    <div style="background-color:#FF9305;" class="nav-wrapper">
+      <a href="#" class="brand-logo center">CMS</a>
+      <ul id="nav-mobile" class="left hide-on-med-and-down">
+        <li><a href="#">Logout</a></li>
+      </ul>
+    </div>
+  </nav>
+
+<h4 style="text-align:left">Doctor Name:{{doctor_name}}</h4>
+<h4 style="text-align:left">Speciality:{{speciality}}</h4>
+<h4 style="text-align:left">Clinic:{{clinic}}</h4>
+
+    {% if messages %}
+        {% for message in messages %}
+            {% if message.tags == 'success'%}
+                <script>M.toast({html: "{{message}}", classes: 'green rounded', displayLength:2000});</script>
+            {% elif message.tags == 'info'%}
+                <script>M.toast({html: "{{message}}", classes: 'orange rounded', displayLength:2000});</script>
+            {% elif message.tags == 'warning'%}
+                <script>M.toast({html: "{{message}}", classes: 'blue rounded', displayLength:10000});</script>
+            {% elif message.tags == 'error'%}
+                <script>M.toast({html: "{{message}}", classes: 'red rounded', displayLength:10000});</script>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+
+<div class="row">
+    <div class="col s12 m6">
+      <div class="card orange darken-1 hoverable">
+        <div class="card-content white-text">
+          <span class="card-title">View Profile</span>
+          <p>You can view and edit profile</p>
+        </div>
+        <div class="card-action">
+		  <a href="/viewdoc?ViewProfile.html">View and edit profile</a>
+		</div>
+      </div>
+    </div>
+    <div class="col s12 m6">
+      <div class="card orange darken-1 hoverable">
+        <div class="card-content white-text">
+          <span class="card-title">Appointments</span>
+          <p>You can view your appointments</p>
+        </div>
+        <div class="card-action">
+          <a href="#">View appointments</a>
+        </div>
+      </div>
+    </div>	
+    <div class="col s12 m6">
+      <div class="card orange darken-1 hoverable">
+        <div class="card-content white-text">
+          <span class="card-title">Prescriptions</span>
+          <p>You can enter and view your previous prescriptions</p>
+        </div>
+        <div class="card-action">
+          <a href="#">New Prescription</a>
+		  <a href="#">View Prescriptions</a>
+        </div>
+      </div>
+    </div>	
+    <div class="col s12 m6">
+      <div class="card orange darken-1 hoverable">
+        <div class="card-content white-text">
+          <span class="card-title">Income</span>
+          <p>You can view the profits and income of the clinic</p>
+        </div>
+        <div class="card-action">
+          <a href="#">View</a>
+		  
+        </div>
+      </div>
+    </div>	
+  </div>
+</body></center>
+</html>

@@ -1,0 +1,82 @@
+<html>
+<head>
+<title> edit profile</title>
+    {% load static %}
+    <!-- Prism CSS -->
+    <link href="{% static "tinymce/css/prism.css" %}" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript for Materialize CSS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+<body><center>
+  <nav>
+    <div style="background-color:#FF9305;" class="nav-wrapper">
+      <a href="#" class="brand-logo center">Edit Profile</a>
+      <ul id="nav-mobile" class="left hide-on-med-and-down">
+        <li><a href="#">Back</a></li>
+      </ul>
+    </div>
+  </nav>
+<form  action='#' method="post">
+{% csrf_token %}
+<h4>You can edit your profile</h4>
+  <div class="row">
+	  <div class="row">	
+	    <div class="input-field col s3">
+		
+		</div>
+        <div class="input-field col s6">
+		  <input id="doctor no" type="text" name="docno" required >
+          <label for="doctor no">Phone Number </label>
+        </div>
+	  </div>
+	  <div class="row">
+	    <div class="input-field col s3">
+		
+		</div>
+        <div class="input-field col s6">
+		  <input id="doctor clinic" type="text" name="docclinic" required >
+          <label for="doctor clinic">Clinic </label>
+        </div>
+	  </div>
+	  <div class="row">
+	    <div class="input-field col s3">
+		
+		</div>
+        <div class="input-field col s6">
+		  <input id="doctor spec" type="text" name="docspe" required >
+          <label for="doctor spec">Speciality </label>
+        </div>
+	  </div>
+	  <div class="row">
+	    <div class="input-field col s3">
+		
+		</div>
+        <div class="input-field col s6">
+		  <input id="doctor email" type="email" name="docemail" required >
+          <label for="doctor email">Email Id </label>
+        </div>
+	  </div>
+	  <div class="row">
+	    <div class="input-field col s3">
+		
+		</div>
+        <div class="input-field col s6">
+		  <input id="doc password" type="password" name="docpass" required >
+          <label for="doc password">Password </label>
+        </div>	
+      		
+      </div>
+
+    
+  </div>
+
+
+<p>
+		<button style="background-color:#FF9305;" class="btn waves-effect waves-light" type="Submit" formaction="/editdoc?a=editdocprofile" >Change
+		</button>
+</p>
+</form>
+</body></center>
+</html>

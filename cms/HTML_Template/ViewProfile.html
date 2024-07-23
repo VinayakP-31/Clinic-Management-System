@@ -1,0 +1,30 @@
+<html>
+<head>
+<title> Doctor page</title>
+    {% load static %}
+    <!-- Prism CSS -->
+    <link href="{% static "tinymce/css/prism.css" %}" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript for Materialize CSS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+  <nav>
+    <div style="background-color:#FF9305;" class="nav-wrapper">
+      <a href="#" class="brand-logo center">Profile</a>
+      <ul id="nav-mobile" class="left hide-on-med-and-down">
+        <li><a href="#">Back</a></li>
+      </ul>
+    </div>
+  </nav>
+<body><center>
+<h4>Doctor Name:{{doc_name}}</h4>
+<h4>Email:{{doc_email}}</h4>
+<h4>Password:{{doc_pass}}</h4>
+<h4>Speciality:{{spe}}</h4>
+<h4>Clinic:{{clinic}}</h4>
+<h4>Phone Number:{{no}}</h4>
+
+<a href="/editdoc?EditProfile.html" class="btn waves-effect waves-light" style="background-color:#FF9305;" >Edit</a>
+</body></center>
+</html>

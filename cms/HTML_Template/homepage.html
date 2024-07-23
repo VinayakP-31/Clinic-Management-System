@@ -1,0 +1,80 @@
+<head>
+    {% load static %}
+    <!-- Prism CSS -->
+    <link href="{% static "tinymce/css/prism.css" %}" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript for Materialize CSS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+<body>
+<h1 style="font-size:600%;text-align:center;font-family:courier;">Welcome to CMS</h1>
+<p style="font-size:160%;text-align:center;font-family:courier;">This website is for local clinics.It helps doctors to view appointments,have an electronic health record and store prescriptions.It helps patients to schedule appointments and have record of their previous visit.
+	  <div class="row">
+		<div class="col m4">
+			
+		  <div class="card orange darken-1 hoverable">
+			<div class="card-content white-text">
+				<div class="card-image">
+					<img src="static/images/doctor5.jpg" alt="Avatar">
+					<span class="card-title" style="color:black">Doctor Login</span>
+					<p>For doctors to login and register.</p>
+				</div>
+			</div>
+			<div class="card-action">
+			  <a href="/signin?a=docsign">Sign In</a>
+			  <a href="/reg?a=docreg">Register</a>
+			</div>
+		  </div>
+		</div>
+	  
+	  
+	  
+		<div class="col m4">
+		  <div class="card orange darken-1 hoverable">
+			<div class="card-content white-text">
+				<div class="card-image">
+					<img src="static/images/patient4.png">
+					<span class="card-title" style="color:black">Patient Login</span>
+					<p>For patients to login and register.</p>
+				</div>
+			</div>
+			<div class="card-action">
+			  <a href="/loginpat?a=sign">Sign In</a>
+			  <a href="/addfromhome?a=regis">Register</a>
+			</div>
+		  </div>
+		</div>
+	  
+	  
+	  	  
+		<div class="col m4">
+		  <div class="card orange darken-1 hoverable">
+			<div class="card-content white-text">
+				<div class="card-image">
+					<img src="static/images/recep4.jpg">				
+					<span class="card-title" style="color:black">Receptionist Login</span>
+					<p>For Receptionist to login and register.</p>
+				</div>
+			</div>
+			<div class="card-action">
+			  <a href="/login?a=recepsignin">Sign In</a>
+			  <a href="/register?a=recepregister">Register</a>
+			</div>
+		  </div>
+		</div>
+	  </div>
+    {% if messages %}
+        {% for message in messages %}
+            {% if message.tags == 'success'%}
+                <script>M.toast({html: "{{message}}", classes: 'green rounded', displayLength:2000});</script>
+            {% elif message.tags == 'info'%}
+                <script>M.toast({html: "{{message}}", classes: 'blue rounded', displayLength:2000});</script>
+            {% elif message.tags == 'warning'%}
+                <script>M.toast({html: "{{message}}", classes: 'orange rounded', displayLength:10000});</script>
+            {% elif message.tags == 'error'%}
+                <script>M.toast({html: "{{message}}", classes: 'red rounded', displayLength:10000});</script>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+</body>
